@@ -4,7 +4,7 @@ const GROUND=415,WORLD=6400;
 const reflections=scope.DesignReflections||(typeof require==='function'?require('./reflections.js'):[]);
 const DASH_SPEED=680,DASH_DURATION=.5;
 const DASH_COOLDOWN=6,DASH_RANGE=[180,DASH_SPEED*DASH_DURATION-20],ATTACK_RANGE=75;
-const ATTACK_DAMAGE_DELAY=.15;
+const ATTACK_DAMAGE_DELAY=.05;
 const LOW_JUMP=-560,HIGH_JUMP=-740,DETECTION_RANGE=1200;
 const BLOCK_CAUSES={
  culturales:[

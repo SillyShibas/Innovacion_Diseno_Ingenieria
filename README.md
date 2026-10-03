@@ -61,7 +61,7 @@ Cada plataforma tiene un 60 % de probabilidad de empezar con un gris, con un má
 
 Los grises tienen una recarga de salto de 1,5 segundos, también al esquivar pinchos. Las plataformas son 30 píxeles más anchas. Ambos tipos de enemigo pueden trasladarse entre plataformas y bajar a una superficie segura. Las plataformas reservan como máximo un gris; si dos coinciden, el sobrante busca bajar inmediatamente. El contacto de una cabeza contra los pies en el aire se detecta mediante su movimiento relativo, incluso durante el ascenso del jugador, conservando la zona estrecha y los 0,5 segundos al aterrizar.
 
-La espada de los principales solo hace daño 0,15 segundos después de dibujarse por primera vez en pantalla. La animación se mantiene visible durante la ventana de daño.
+La espada de los principales solo hace daño 0,05 segundos después de dibujarse por primera vez en pantalla. La animación se mantiene visible durante la ventana de daño.
 
 Al saltar por debajo de un grupo de pinchos, el tablero de la plataforma detiene la cabeza tanto del jugador como de los enemigos. Los tramos libres siguen permitiendo subir a través de la plataforma; los pinchos mantienen el daño al tocarlos desde arriba.
 
