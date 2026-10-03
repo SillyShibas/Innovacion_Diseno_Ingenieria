@@ -1,43 +1,68 @@
-# Cartón & Ideas
+# Escuchar para iterar
 
-Juego de plataformas sencillo en HTML, CSS y JavaScript. Rollo es un robot de tubos de papel higiénico, botones y palitos de manualidades. Recorre colinas cartoon inspiradas en el fondo de Windows XP. Todos los gráficos son dibujos originales generados con Canvas y SVG; no necesita imágenes externas, librerías ni instalación.
+Juego de plataformas en HTML, CSS y JavaScript sobre el diseño en ingeniería. Ayuda a CaseroBot a perseverar, superar a cinco enemigos y descubrir las reflexiones del portafolio. Conserva el paisaje de colinas y la interfaz cartoon.
 
-## Probarlo en tu computador
+## Probarlo
 
 1. Abre `index.html` con doble clic en Chrome, Edge o Firefox.
 2. Pulsa **¡Vamos a crear!**.
-3. Muévete con **← / →** o **A / D**. Salta con **espacio**, **W** o **↑**. Pausa con **Escape**.
-4. Pisa los enemigos desde arriba. Recoge la estrella que dejan para abrir una reflexión con imagen.
-5. Cierra la reflexión con **Continuar** o **Escape**. Puedes consultar las recogidas con **Mis reflexiones**.
+3. Muévete con **← / →** o **A / D**; salta con **Espacio**, **W** o **↑**. Pulsa **Escape** para pausar. En móvil usa los botones inferiores.
+4. Pisa los enemigos desde arriba. Recoge sus estrellas para leer las reflexiones con las fotografías e imágenes originales del Word.
 
-En dispositivos táctiles usa los botones inferiores. Tocar a un enemigo de lado provoca derrota inmediata. La pantalla muestra **“Fuiste victima del bloqueo creativo”** y su botón vuelve al inicio, donde comienza una partida nueva.
+Los enemigos persiguen, saltan a las plataformas, preparan un dash con ojos rojos y dejan una estela roja. El dash puede repetirse una vez cada seis segundos por enemigo; también tienen un barrido de corto alcance. El nivel mide 6.400 píxeles y tiene dieciséis plataformas, grupos de dos a cuatro pinchos por plataforma, sin pinchos en el suelo, y tres pozos señalizados: culturales, emocionales y perceptuales. Los pozos no tienen puentes: se cruzan saltando desde el suelo. Los carteles tienen posiciones fijas, independientes de los enemigos.
 
-Al vencer al quinto enemigo ya ganaste: puedes recoger las estrellas pendientes o pulsar **Ⅱ** para abrir la celebración. Al cerrar la última reflexión recogida se abre automáticamente la pantalla de victoria. Desde allí las cinco reflexiones quedan disponibles, incluso si no recogiste alguna estrella. **Jugar de nuevo** borra el progreso de la partida anterior.
+Los principales reciben nombres aleatorios de su categoría al comenzar; solo se revelan si te eliminan: **“Has sido victima de un bloqueo creativo <categoría> por <causa>”**. El contacto con un enemigo gris o con pinchos muestra **“Has sido victima de las malas decisiones de diseño”**. Caer en un pozo muestra **“Has sido victima de un bloqueo cultural/emocional/perceptual.”**, según el pozo. El botón vuelve al inicio y reinicia la partida. Hay entre tres y cuatro enemigos grises en el suelo por tramo (uno o dos menos que antes) (cantidad aleatoria): solo patrullan, pueden saltar a las plataformas bajas, no atacan y se eliminan pisándolos. No dan reflexiones ni cuentan para la victoria. Los cinco principales se acercan por los costados para atacar y evitan pinchos. Después de caer sobre una plataforma, la zona de ataque de los pies permanece activa durante 0,5 segundos; no protege el torso ni los laterales. Al vencer a los cinco enemigos ya ganaste: recoge las estrellas pendientes o pulsa **Ⅱ** para abrir la celebración. Cerrar la última reflexión recogida abre la celebración automáticamente. La galería final permite revisar las cinco reflexiones, incluso si dejaste alguna estrella pendiente. Recargar empieza desde cero.
 
-## Subirlo a GitHub Pages
+## Publicar en GitHub Pages
 
-1. Crea un repositorio en GitHub y sube `index.html`, `styles.css`, `engine.js` y `game.js` a la raíz. También puedes subir el README y los tests.
-2. En el repositorio abre **Settings → Pages**.
-3. En **Build and deployment**, selecciona **Deploy from a branch**.
-4. Elige la rama donde subiste los archivos (normalmente `main`) y la carpeta **/(root)**; pulsa **Save**.
-5. Cuando termine la publicación, abre el enlace indicado en Pages, normalmente `https://TU-USUARIO.github.io/TU-REPOSITORIO/`.
+Sube estos archivos y carpetas juntos, respetando sus nombres:
 
-No requiere build, npm, servidor de aplicación ni claves. Las rutas son relativas para funcionar en un subdirectorio de GitHub Pages. Si lo agregas dentro de otro sitio, conserva los cuatro archivos juntos y visita el `index.html` de esa carpeta.
+- `index.html`
+- `styles.css`
+- `reflections.js`
+- `engine.js`
+- `game.js`
+- `assets/reflections/` con sus cinco imágenes
+- `.nojekyll`
 
-Referencia: [configurar la publicación en GitHub Pages](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site).
+Después, en **Settings → Pages → Build and deployment**, elige **Deploy from a branch**, la rama que contiene los archivos y **/(root)**; pulsa **Save**. Abre el enlace que indique Pages cuando termine la publicación. Si están en una subcarpeta de otro sitio, abre el `index.html` de esa carpeta.
 
-## Comprobación breve
+No requiere npm, compilación ni servidor de aplicación. Todas las rutas son relativas y no hay imágenes ni fuentes descargadas desde servicios externos.
 
-Con Node.js instalado ejecuta:
+Referencia: [configuración de GitHub Pages](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site).
+
+## Comprobaciones breves
+
+Con Node.js:
 
 ```sh
 node tests/engine.test.cjs
 ```
 
-Comprueba movimiento, salto, aterrizaje en plataformas, pisotón, golpe lateral, powerups, pausa, cinco enemigos y reinicio. Para una comprobación manual rápida: pierde tocando un enemigo, vuelve a empezar y salta sobre el primero; abre su reflexión y comprueba que el juego se detiene mientras lees.
+Son 45 comprobaciones de física, colisiones, dash, recarga, alcance de ataque, navegación, hazards, powerups, pausa, victoria y reinicio.
 
-## Personalizar
+La comprobación opcional de navegador usa Playwright y Microsoft Edge:
 
-- Cambia los textos y colores en `reflections`, al principio de `engine.js`.
-- Ajusta los gráficos en `game.js` y el estilo de la página en `styles.css`.
-- No hay guardado permanente: recargar la página empieza de cero.
+```sh
+node tests/browser-smoke.cjs
+```
+
+Revisa los flujos principales y el diseño a 1280, 390 y 320 píxeles. Regenera las capturas de `tests/`. Playwright debe estar disponible para Node; el juego no depende de él.
+
+## Contenido
+
+`reflections.js` contiene los títulos y los textos completos importados del Word actualizado, junto con las rutas de sus imágenes. La imagen aparece debajo del texto, completa y conservando sus proporciones. En pantallas pequeñas las ventanas permiten desplazarse para acceder a todo el contenido. Las reflexiones y los menús detienen la simulación, incluidos los tiempos de los ataques.
+
+Las plataformas bajas están elevadas 25 píxeles. La protección de 0,5 segundos ocupa una franja estrecha en los pies: no alcanza a los grises que pasan por debajo. Los cinco principales usan colores saturados propios, independientes de las imágenes de las reflexiones.
+
+Los principales detectan al jugador a 1.200 píxeles (antes 600). Usan un salto bajo de aproximadamente 108 píxeles y otro alto de aproximadamente 189 píxeles: eligen según la superficie objetivo y pueden alcanzar directamente las plataformas altas desde el suelo. Los grises usan el salto bajo para subir plataformas cercanas durante su patrulla, sin perseguir ni atacar.
+
+Cada plataforma tiene un 60 % de probabilidad de empezar con un gris, con un máximo de uno por plataforma. Los pinchos forman un grupo contiguo de 2 a 4 en una posición aleatoria dentro de cada plataforma, dejando espacio seguro. Los enemigos saltan los grupos que están en su camino y solo saltan si existe un aterrizaje seguro. El dash tiene prioridad cuando el especial está apoyado, dentro del rango y con su recarga disponible; se detiene antes de los bordes, pozos o pinchos y nunca se inicia en el aire. El encabezado muestra «Taller En Énfasis 1».
+
+Los grises tienen una recarga de salto de 1,5 segundos, también al esquivar pinchos. Las plataformas son 30 píxeles más anchas. Ambos tipos de enemigo pueden trasladarse entre plataformas y bajar a una superficie segura. Las plataformas reservan como máximo un gris; si dos coinciden, el sobrante busca bajar inmediatamente. El contacto de una cabeza contra los pies en el aire se detecta mediante su movimiento relativo, incluso durante el ascenso del jugador, conservando la zona estrecha y los 0,5 segundos al aterrizar.
+
+La espada de los principales solo hace daño 0,15 segundos después de dibujarse por primera vez en pantalla. La animación se mantiene visible durante la ventana de daño.
+
+Al saltar por debajo de un grupo de pinchos, el tablero de la plataforma detiene la cabeza tanto del jugador como de los enemigos. Los tramos libres siguen permitiendo subir a través de la plataforma; los pinchos mantienen el daño al tocarlos desde arriba.
+
+El dash se inicia a una distancia de 180 a 320 píxeles, dejando 20 píxeles de margen respecto a sus 340 píxeles de desplazamiento máximo. Si el jugador está más lejos, el especial se acerca antes de prepararlo.

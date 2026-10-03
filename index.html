@@ -4,28 +4,29 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#f8f2df">
-  <title>Cartón & Ideas — una aventura creativa</title>
+  <title>Escuchar para iterar: Como afecta la iteración al diseño en ingeniería.</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <main class="shell">
-    <header class="masthead"><a class="brand" href="./">✳ TALLER DE IDEAS</a><span>HECHO DE CARTÓN. LLENO DE POSIBILIDADES.</span></header>
-    <section class="heading"><div><p class="eyebrow">UNA PEQUEÑA AVENTURA CREATIVA</p><h1>Cartón <i>&</i> Ideas<span class="title-star">✦</span></h1><p>Un pequeño robot. Cinco bloqueos. Muchas formas de volver a crear.</p></div><div class="stamp">100%<br><strong>imaginación</strong><br>0% perfección</div></section>
+    <header class="masthead"><a class="brand" href="./">✳ Taller En Énfasis 1</a><span>ESCUCHA LAS DOLENCIAS. EXPLORA SOLUCIONES.</span></header>
+    <section class="heading"><div><p class="eyebrow">DISEÑO EN INGENIERÍA · PORTAFOLIO</p><h1>Escuchar para iterar:<span class="title-detail">Como afecta la iteración al diseño en ingeniería.</span></h1><p>Comprende las necesidades del usuario y aprende en cada iteración.</p></div><div class="stamp">100%<br><strong>aprendizaje</strong><br>cada iteración</div></section>
     <section class="game-frame" aria-label="Juego de plataformas">
       <div class="toolbar"><span id="progress" aria-live="polite">BLOQUEOS SUPERADOS · 0 / 5</span><div><button id="gallery-button" type="button">Mis reflexiones <span id="collected">0/5</span></button><button id="pause-button" type="button" aria-label="Pausar juego">Ⅱ</button></div></div>
       <div class="stage">
-        <canvas id="game" width="960" height="500" aria-label="Robot de cartón en colinas verdes. Usa flechas o A y D para moverte, espacio o W para saltar."></canvas>
+        <canvas id="game" width="960" height="500" aria-label="CaseroBot en colinas verdes. Usa flechas o A y D para moverte, espacio o W para saltar."></canvas>
         <span class="world-tag">COLINAS DE LA IMAGINACIÓN</span>
         <div id="overlay" class="overlay">
           <section class="panel" id="panel" role="dialog" aria-modal="true" aria-label="Menú del juego"></section>
         </div>
         <div id="toast" class="toast" role="status"></div>
       </div>
-      <div class="game-footer"><span><b>← →</b> o <b>A D</b> moverse <em>·</em> <b>ESPACIO / W / ↑</b> saltar <em>·</em> <b>ESC</b> pausa</span><span>Pisa los bloqueos desde arriba ✦</span></div>
+      <div class="game-footer"><span><b>← →</b> o <b>A D</b> moverse <em>·</em> <b>ESPACIO / W / ↑</b> saltar <em>·</em> <b>ESC</b> pausa</span><span>Pisa los enemigos desde arriba ✦</span></div>
     </section>
     <div class="touch-controls" aria-label="Controles táctiles"><div><button data-control="left" aria-label="Mover a la izquierda">←</button><button data-control="right" aria-label="Mover a la derecha">→</button></div><button data-control="jump" aria-label="Saltar">SALTAR ↑</button></div>
-    <footer class="page-footer"><span>Lo extraordinario también empieza con materiales ordinarios.</span><span>RECORTA. EXPLORA. CREA. ↗</span></footer>
+    <footer class="page-footer"><span>Un buen diseño responde a las necesidades de las personas.</span><span>ESCUCHA. PRUEBA. ITERA. ↗</span></footer>
   </main>
+  <script src="reflections.js"></script>
   <script src="engine.js"></script>
   <script src="game.js"></script>
 </body>
